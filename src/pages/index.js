@@ -5,7 +5,7 @@ import styles from "@/styles/Home.module.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home({ title }) {
+export default function Home({ data }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -25,6 +25,18 @@ export default function Home({ title }) {
       </header>
 
       <main className={styles.main}>
+        {data.map((ev) => (
+          <a key={ev.id} href={"/events/${ev.id}"}>
+            {" "}
+            <Image
+              width={200}
+              height={"100%"}
+              alt={ev.title}
+              src={ev.image}
+            />{" "}
+            <h2> {ev.title} </h2> <p> {ev.description}</p>{" "}
+          </a>
+        ))}
         <a href="/events/london">
           <img />
           <h2> Events in London</h2>
@@ -72,10 +84,13 @@ export default function Home({ title }) {
   );
 }
 
-export function getServerSideProps() {
+export async function getServerSideProps() {
+  const { events_categories } = await import("/data/data.json");
+  console.log(events_categories);
+
   return {
     props: {
-      title: "Hello everyone!",
+      data: events_categories,
     },
   };
 }

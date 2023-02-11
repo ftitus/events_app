@@ -1,4 +1,4 @@
-const Page = () => {
-  return <h1> About us Page</h1>;
+const AboutUsPage = () => {
+  return <h1> About Us Page</h1>;
 };
 export default AboutUsPage;

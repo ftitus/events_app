@@ -66,7 +66,7 @@ export default function Home() {
         </a>
       </main>
       <footer className={styles.footer}>
-        <p> 2023 Time To Code A Project js</p>
+        <p> 2023 Time To Code A Project Built With Next.js</p>
       </footer>
     </div>
   );

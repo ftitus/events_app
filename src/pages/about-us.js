@@ -1,4 +1,4 @@
-const AboutUsPage = () => {
+const AboutUsPage = ({ title }) => {
   return (
     <div>
       <h1> About Us Page</h1>;

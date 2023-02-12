@@ -1,4 +1,6 @@
-const AboutUsPage = ({ title }) => {
+import { Header } from "@/components/header/header";
+
+const AboutUsPage = ({}) => {
   return (
     <div>
       <h1> About Us Page</h1>;

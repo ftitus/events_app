@@ -19,13 +19,13 @@ export default function Home({ data }) {
       <header>
         <nav>
           <Link href="/" passHref>
-            <a> Home</a>
+            Home
           </Link>
           <Link href="/events" passHref>
-            <a> Events</a>
+            Events
           </Link>
           <Link href="/about-us" passHref>
-            <a> About Us</a>
+            About Us
           </Link>
         </nav>
       </header>
@@ -33,10 +33,8 @@ export default function Home({ data }) {
       <main className={styles.main}>
         {data.map((ev) => (
           <Link key={ev.id} href={"/events/${ev.id}"} passHref>
-            <a>
-              <Image width={300} height={300} alt={ev.title} src={ev.image} />{" "}
-              <h2> {ev.title} </h2> <p> {ev.description}</p>{" "}
-            </a>
+            <Image width={300} height={300} alt={ev.title} src={ev.image} />{" "}
+            <h2> {ev.title} </h2> <p> {ev.description}</p>{" "}
           </Link>
         ))}
         <a href="/events/london">
